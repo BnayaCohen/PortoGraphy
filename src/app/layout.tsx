@@ -57,12 +57,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
-  },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -84,6 +80,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
         {/* <Analytics /> */}
       </head>
       <body
