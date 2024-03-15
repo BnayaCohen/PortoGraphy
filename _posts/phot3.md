@@ -1,7 +1,7 @@
 ---
-title: 'My first post'
+title: 'My 3 post'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: '2020-02-02'
+date: '2020-02-25'
 modified_date: '2020-02-02'
 image: /assets/images/posts/random-img.jpg
 ---
