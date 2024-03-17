@@ -22,8 +22,8 @@
 // }
 
 import "../../globals.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import { Inter } from "next/font/google";
+import LocalFont from "next/font/local";
 import { Metadata } from "next";
 // import { Analytics } from "./components/analytics";
 

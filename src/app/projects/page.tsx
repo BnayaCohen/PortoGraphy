@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { getAllPosts } from "../../util/Content";
+import { getAllPosts } from "../util/Content";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
