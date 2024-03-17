@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const allProjects = getAllPosts(['title', 'description', 'date', 'slug']);
+  const allProjects = getAllPosts(['title', 'description','image', 'date', 'slug']);
   const views = allProjects.reduce((acc, project) => {
     acc[project.slug] = getRandomInt(0, 1000); // Adjust the range of random views as needed
     return acc;
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
             <Link href={`/projects/${featured.slug}`}>
-              <article className="relative w-full h-full p-4 md:p-8">
+              <article className="relative w-full h-full p-4 md:p-8" style={{backgroundImage: `url(${featured.image})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-xs text-zinc-100">
                     {featured.date ? (

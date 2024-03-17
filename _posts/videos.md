@@ -3,14 +3,14 @@ title: 'My first post'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: '2020-02-02'
 modified_date: '2020-02-02'
-image: /assets/images/posts/random-img.jpg
+image: /assets/images/my-logo.png
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Example with image:
 
-![Error](@@baseUrl@@/public/assets/my logo.png)
+![Error](@@baseUrl@@/assets/images/my-logo.png)
 
 Example code block:
 
