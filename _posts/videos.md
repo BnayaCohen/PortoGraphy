@@ -1,6 +1,6 @@
 ---
-title: 'My first post'
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+title: 'Tutorial of shooting and editing'
+description: This is for better knowledge
 date: '2020-02-02'
 modified_date: '2020-02-02'
 image: /assets/images/my-logo.png

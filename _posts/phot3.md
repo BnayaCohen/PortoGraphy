@@ -1,8 +1,8 @@
 ---
-title: 'My 3 post'
+title: 'Filming day at the desert'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: '2020-02-25'
-modified_date: '2020-02-02'
+modified_date: '2020-10-02'
 image: /assets/images/posts/random-img.jpg
 ---
 
