@@ -19,9 +19,9 @@ export default function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
 
-  const featured = allProjects.find((project) => project.slug === "videos")!;
-  const top2 = allProjects.find((project) => project.slug === "photos")!;
-  const top3 = allProjects.find((project) => project.slug === "phot2")!;
+  const featured = allProjects.find((project) => project.slug === "template")!;
+  const top2 = allProjects.find((project) => project.slug === "red-sea")!;
+  const top3 = allProjects.find((project) => project.slug === "snow")!;
   const sorted = allProjects
     .filter(
       (project) =>
