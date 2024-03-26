@@ -9,7 +9,7 @@ const videos = [
 	{
 		url: "6zpqjak-ZXc",
 		description: "This project captures the essence of my transformative 8-month adventure across South America. It demonstrates the power of visual storytelling and sound to evoke emotions and create lasting memories.",
-		quote: "''Don’t ask what the world needs. Ask what makes you come alive, and go do it. Because what the world needs is people who have come alive.''  Howard Thurman.",
+		quote: "''Don’t ask what the world needs. Ask what makes you come alive, and go do it. Because what the world needs is more people to come alive.''  Howard Thurman.",
 		label: "South America",
 	},
 	{
@@ -59,37 +59,36 @@ export default function Films() {
 		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
 
-			<header className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black">
+			<header className="relative isolate overflow-hidden mb-8 bg-gradient-to-tl from-black via-zinc-900 to-black">
 				<div
 					className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${isIntersecting
 						? "bg-zinc-900/0 border-transparent"
 						: "bg-white/10  border-zinc-200 lg:border-transparent"
 						}`}
 				></div>
-				<div className="container mx-auto relative isolate overflow-hidden py-8 sm:py-32">
+				<div className="container mx-auto relative isolate overflow-hidden pt-24 pb-16 sm:py-32 sm:pb-24">
 					<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 						<div className="mx-auto max-w-2xl lg:mx-0">
 							<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
 								Personal Films
 							</h1>
 							<p className="mt-6 text-lg leading-8 text-zinc-300">
-								I turn experiences into captivating stories. This collection showcases my ability to take real-life adventures – and transform them into emotionally resonant videos.
+								I turn experiences into captivating stories. This collection showcases my ability to take real-life adventures and transform them into emotionally resonant videos.
 							</p>
 						</div>
 					</div>
 				</div>
 			</header>
 
-
 			<div className="container flex flex-col items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid grid-cols-1 gap-8">
 					{videos.map((video, index) => (
-						<article key={index} className="w-88 sm:w-128 md:w-168 lg:w-224 xl:w-248">
+						<article key={index} className="w-96 sm:w-128 md:w-168 lg:w-224 xl:w-248">
 							<div className="p-6 flex flex-col items-center justify-center gap-4 duration-700 group">
 								<span className="text-2xl font-medium text-center text-zinc-200 font-display">
 									{video.label}
 								</span>
-								<div className="text-m w-10/12 text-center text-zinc-400">
+								<div className="text-m text-center text-zinc-400">
 									{video.description}
 								</div>
 								<div className="w-full">
@@ -97,7 +96,7 @@ export default function Films() {
 										<YouTube videoId={video.url} opts={opts} />
 									</div>
 								</div>
-								<div className="text-sm w-8/12 text-center text-zinc-500">
+								<div className="text-sm w-10/12 text-center text-zinc-500">
 									{video.quote}
 								</div>
 							</div>
