@@ -66,7 +66,7 @@ export default function Films() {
 						: "bg-white/10  border-zinc-200 lg:border-transparent"
 						}`}
 				></div>
-				<div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
+				<div className="container mx-auto relative isolate overflow-hidden py-8 sm:py-32">
 					<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 						<div className="mx-auto max-w-2xl lg:mx-0">
 							<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
@@ -93,7 +93,7 @@ export default function Films() {
 									{video.description}
 								</div>
 								<div className="w-full">
-									<div className="embed-responsive aspect-ratio-16/9">
+									<div className="embed-responsive aspect-ratio-landscape">
 										<YouTube videoId={video.url} opts={opts} />
 									</div>
 								</div>

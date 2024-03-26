@@ -6,7 +6,7 @@ import { markdownToHtml } from '../../util/Markdown';
 // import { Mdx } from "@/app/components/mdx";
 import { PostContent } from '../../components/postContent';
 import { Header } from "./header";
-import "./mdx.css";
+// import "./mdx.css";
 // import { ReportView } from "./view";
 
 export const revalidate = 60;

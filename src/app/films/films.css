@@ -26,6 +26,6 @@
 }
 
 /* Aspect ratio utility class */
-.aspect-ratio-16/9 {
+.aspect-ratio-landscape {
   padding-top: 56.25%; /* 16:9 aspect ratio (height / width) */
 }
