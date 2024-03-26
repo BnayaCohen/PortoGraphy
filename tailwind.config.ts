@@ -30,6 +30,13 @@ module.exports = {
 
 	theme: {
 		extend: {
+			width: {
+        '88': '22rem',
+        '128': '32rem',
+        '168': '42rem',
+        '224': '56rem',
+        '248': '62rem',
+      },
 			typography: {
 				DEFAULT: {
 					css: {

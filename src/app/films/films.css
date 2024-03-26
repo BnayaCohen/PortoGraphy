@@ -1,0 +1,31 @@
+/* CSS for responsive YouTube video */
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio (height / width) */
+}
+
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Aspect ratio utility class */
+.aspect-ratio-16/9 {
+  padding-top: 56.25%; /* 16:9 aspect ratio (height / width) */
+}

@@ -6,16 +6,12 @@ modified_date: '2023-02-02'
 image: /assets/demo-images/red-sea/IMG_5912.JPG
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#### The photos were taken by the old canon 700d
 
-Example with image:
+| ![Photo](@@baseUrl@@/assets/demo-images/red-sea/IMG_6034.JPG) | ![Photo](@@baseUrl@@/assets/demo-images/red-sea/IMG_6073.JPG) |
+| --- | --- |
 
-![Error](@@baseUrl@@/assets/images/my-logo.png)
+![Photo](@@baseUrl@@/assets/demo-images/red-sea/IMG_5906.JPG)
+![Photo](@@baseUrl@@/assets/demo-images/red-sea/IMG_6122.JPG)
 
-Example code block:
-
-```js
-function myFunction() {
-  return true;
-}
-```
+Special Model: YamBa

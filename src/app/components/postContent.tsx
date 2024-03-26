@@ -7,28 +7,28 @@ type IContentProps = {
 };
 
 const PostContent = (props: IContentProps) => (
-  <div className="post-content">
+  <div className="content">
     {props.children}
 
     <style jsx>
       {`
-        .post-content :global(*) {
+        .content :global(*) {
           @apply break-words;
         }
 
-        .post-content :global(p) {
+        .content :global(p) {
           @apply my-6;
         }
 
-        .post-content :global(ul) {
+        .content :global(ul) {
           @apply my-6;
         }
 
-        .post-content :global(h2) {
+        .content :global(h2) {
           @apply text-2xl font-semibold text-gray-700 my-4;
         }
 
-        .post-content :global(h3) {
+        .content :global(h3) {
           @apply text-xl font-semibold text-gray-700 my-4;
         }
       `}
