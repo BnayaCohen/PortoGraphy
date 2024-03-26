@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from "react";
 const videos = [
 	{
 		url: "6zpqjak-ZXc",
-		description: "This project captures the essence of my transformative 8-month adventure across South America. It demonstrates the power of visual storytelling and sound to evoke emotions and create lasting memories.",
+		description: "This project captures the essence of my transformative 8-month adventure across South America. It demonstrates the power of visual storytelling and sound design to evoke emotions and create lasting memories.",
 		quote: "''Don’t ask what the world needs. Ask what makes you come alive, and go do it. Because what the world needs is more people to come alive.''  Howard Thurman.",
 		label: "South America",
 	},
@@ -83,27 +83,34 @@ export default function Films() {
 			<div className="container flex flex-col items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid grid-cols-1 gap-8">
 					{videos.map((video, index) => (
-						<article key={index} className="w-96 sm:w-128 md:w-168 lg:w-224 xl:w-248">
-							<div className="p-6 flex flex-col items-center justify-center gap-4 duration-700 group">
-								<span className="text-2xl font-medium text-center text-zinc-200 font-display">
-									{video.label}
-								</span>
-								<div className="text-m text-center text-zinc-400">
-									{video.description}
-								</div>
-								<div className="w-full">
-									<div className="embed-responsive">
-										<YouTube videoId={video.url} opts={opts} />
+						<article key={index}>
+							<div className="mb-24 w-96 sm:w-128 md:w-168 lg:w-224 xl:w-248">
+								<div className="p-6 flex flex-col items-center justify-center gap-4 duration-700 group">
+									<span className="text-3xl font-medium text-center text-zinc-200 font-display">
+										{video.label}
+									</span>
+									<div className="text-m text-center text-zinc-400">
+										{video.description}
+									</div>
+									<div className="w-full">
+										<div className="embed-responsive">
+											<YouTube videoId={video.url} opts={opts} />
+										</div>
+									</div>
+									<div className="text-sm w-10/12 text-center text-zinc-500">
+										{video.quote}
 									</div>
 								</div>
-								<div className="text-sm w-10/12 text-center text-zinc-500">
-									{video.quote}
-								</div>
 							</div>
+							{index !== videos.length - 1 && (
+								<div className="flex justify-center">
+									<div className="w-10/12 bg-gradient-to-r from-transparent via-zinc-500 to-transparent pt-px" />
+								</div>
+							)}
 						</article>
 					))}
 				</div>
-				<div className="py-20"></div>
+				<div className="py-6"></div>
 			</div>
 		</div>
 	);
