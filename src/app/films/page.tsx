@@ -93,7 +93,7 @@ export default function Films() {
 									{video.description}
 								</div>
 								<div className="w-full">
-									<div className="embed-responsive aspect-ratio-landscape">
+									<div className="embed-responsive">
 										<YouTube videoId={video.url} opts={opts} />
 									</div>
 								</div>
