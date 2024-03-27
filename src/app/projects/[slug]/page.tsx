@@ -4,10 +4,11 @@ import { getAllPosts, getPostBySlug } from "../../util/Content";
 import { markdownToHtml } from '../../util/Markdown';
 
 // import { Mdx } from "@/app/components/mdx";
-import { PostContent } from '../../components/postContent';
-import { Header } from "./header";
 // import "./mdx.css";
 // import { ReportView } from "./view";
+import { PostContent } from '../../components/postContent';
+import { Header } from "./header";
+import PhotoGallery from '../../components/PhotoGallery';
 
 export const revalidate = 60;
 
@@ -37,20 +38,30 @@ export default async function PostPage({ params }: Props) {
 
   if (!post) {
     notFound();
-  }
-  else {
+  } else {
     post.content = await markdownToHtml(post.content || '');
   }
 
   const views = 1665
 
+  const images = [
+    '/assets/demo-images/red-sea/IMG_6034.JPG',
+    '/assets/demo-images/red-sea/IMG_5912.JPG',
+    '/assets/demo-images/red-sea/IMG_6073.JPG',
+    '/assets/demo-images/red-sea/IMG_5906.JPG',
+    // Add more image URLs as needed
+  ];
+
   return (
     <div className="bg-zinc-50 min-h-screen">
       <Header post={post} views={views} />
       {/* <ReportView slug={post.slug} /> */}
+        <PhotoGallery images={images} />
 
       <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
         {/* <Mdx code={post.body.code} /> */}
+
+
         <PostContent>
           <div
             dangerouslySetInnerHTML={{ __html: post.content }}
