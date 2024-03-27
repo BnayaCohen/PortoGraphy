@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
+import ImgContainer from "./ImgContainer";
+import { addBlurredDataUrls } from "@/lib/getBase64";
 
 type PhotoGalleryProps = {
   images: string[];
@@ -7,28 +9,33 @@ type PhotoGalleryProps = {
 
 const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [galleryReady, setGalleryReady] = useState<boolean>(false);
+  const [galleryReady, setGalleryReady] = useState<boolean>(true);
 
   useEffect(() => {
-    const loadImage = async () => {
-      const promises = images.map(imageUrl => {
-        return new Promise<void>((resolve, reject) => {
-          const img = new Image();
-          img.onload = () => resolve();
-          img.onerror = () => reject();
-          img.src = imageUrl;
-        });
-      });
+    const imagesToLoad = images.map((image) => {
+      const img = new Image();
+      img.src = image;
+      return img;
+    });
 
-      try {
-        await Promise.all(promises);
+    let loadedCount = 0;
+
+    const checkLoadedCount = () => {
+      loadedCount++;
+      if (loadedCount === images.length) {
         setGalleryReady(true);
-      } catch (error) {
-        console.error('Failed to load images:', error);
       }
     };
 
-    loadImage();
+    imagesToLoad.forEach((img) => {
+      img.onload = checkLoadedCount;
+    });
+
+    return () => {
+      imagesToLoad.forEach((img) => {
+        img.onload = null;
+      });
+    };
   }, [images]);
 
   const handleImageClick = (image: string) => {
@@ -38,30 +45,31 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
   const handleCloseFullScreen = () => {
     setSelectedImage(null);
   };
-
+// `w-fit mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 ${galleryReady ? '' : 'hidden'}`     px-1 my-3 gap-1 grid grid-cols-gallery auto-rows-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
   return (
     <>
       {!galleryReady && (
         <div className="text-center">Loading...</div>
       )}
-      <div className={`flex flex-wrap -mx-4 ${galleryReady ? '' : 'hidden'}`}>
+      <div className={'w-fit mx-auto columns-1 gap-x-[3px] sm:columns-2 md:columns-3 lg:columns-4'} >
         {images.map((image, index) => (
-          <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4">
-            <div className="relative w-full aspect-w-1 aspect-h-1">
-              <img
-                src={image}
-                alt={`Photo ${index}`}
-                className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                onClick={() => handleImageClick(image)}
-              />
-              <button
-                className="absolute top-2 right-2 bg-white rounded-full px-2 py-1 shadow-md"
-                onClick={() => handleImageClick(image)}
-              >
-                View
-              </button>
-            </div>
-          </div>
+          
+          <ImgContainer key={index} photo={{ src: { large: image }, height: 300, width: 250, url: image, blurDataURL: "" }} />
+          
+          // <div key={index} className="relative cursor-pointer aspect-w-1 aspect-h-1">
+          //   <img
+          //     src={image}
+          //     alt={`Photo ${index}`}
+          //     className="absolute inset-0 w-full h-full object-cover rounded-lg"
+          //     onClick={() => handleImageClick(image)}
+          //   />
+          //   <button
+          //     className="absolute top-2 right-2 bg-white rounded-full px-2 py-1 shadow-md"
+          //     onClick={() => handleImageClick(image)}
+          //   >
+          //     View
+          //   </button>
+          // </div>
         ))}
         {selectedImage && (
           <FullScreenImage image={selectedImage} onClose={handleCloseFullScreen} />
@@ -86,7 +94,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({ image, onClose }) => 
           className="w-full h-full object-contain"
         />
         <button
-          className="absolute top-4 left-4 bg-white rounded-full px-3 py-2 shadow-md"
+          className="absolute top-4 right-4 bg-white rounded-full px-3 py-2 shadow-md"
           onClick={onClose}
         >
           Return

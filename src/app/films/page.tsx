@@ -33,6 +33,9 @@ const images = [
 	'/assets/demo-images/red-sea/IMG_6073.JPG',
 	'/assets/demo-images/red-sea/IMG_5906.JPG',
 	'/assets/demo-images/red-sea/IMG_5912.JPG',
+	'/assets/demo-images/red-sea/IMG_6073.JPG',
+	'/assets/demo-images/red-sea/IMG_5906.JPG',
+	'/assets/demo-images/red-sea/IMG_5912.JPG',
 	// Add more image URLs as needed
 ];
 

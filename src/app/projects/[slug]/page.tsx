@@ -8,7 +8,7 @@ import { markdownToHtml } from '../../util/Markdown';
 // import { ReportView } from "./view";
 import { PostContent } from '../../components/postContent';
 import { Header } from "./header";
-import PhotoGallery from '../../components/PhotoGallery';
+import PhotoGallery from '../../components/photoGallery';
 
 export const revalidate = 60;
 
