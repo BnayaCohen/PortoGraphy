@@ -93,16 +93,16 @@ export default function Films() {
 			<PhotoGallery images={images} />
 			<div className="py-20"></div>
 
-			<div className="container flex flex-col items-center justify-center min-h-screen px-4 mx-auto">
+			<div className="container flex flex-col items-center justify-center min-h-screen mx-auto">
 				<div className="grid grid-cols-1 gap-8">
 					{videos.map((video, index) => (
 						<article key={index}>
 							<div className="mb-24 w-96 sm:w-128 md:w-168 lg:w-224 xl:w-248">
-								<div className="p-6 flex flex-col items-center justify-center gap-4 duration-700 group">
+								<div className="flex flex-col items-center justify-center gap-4 duration-700 group">
 									<span className="text-3xl font-medium text-center text-zinc-200 font-display">
 										{video.label}
 									</span>
-									<div className="text-m text-center text-zinc-400">
+									<div className="text-m px-1 text-center text-zinc-400">
 										{video.description}
 									</div>
 									<div className="w-full">
