@@ -45,9 +45,10 @@ export default async function PostPage({ params }: Props) {
   const views = 1665
 
   const images = [
-    '/assets/demo-images/red-sea/IMG_6034.JPG',
     '/assets/demo-images/red-sea/IMG_5912.JPG',
+    '/assets/demo-images/red-sea/IMG_6034.JPG',
     '/assets/demo-images/red-sea/IMG_6073.JPG',
+    '/assets/demo-images/red-sea/IMG_6122.JPG',
     '/assets/demo-images/red-sea/IMG_5906.JPG',
     // Add more image URLs as needed
   ];
@@ -56,18 +57,17 @@ export default async function PostPage({ params }: Props) {
     <div className="bg-zinc-50 min-h-screen">
       <Header post={post} views={views} />
       {/* <ReportView slug={post.slug} /> */}
-        <PhotoGallery images={images} />
 
       <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
         {/* <Mdx code={post.body.code} /> */}
-
-
         <PostContent>
           <div
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </PostContent>
       </article>
+      <PhotoGallery images={images} />
+      <div className="py-10"></div>
     </div>
   );
 }

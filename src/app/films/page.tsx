@@ -1,8 +1,6 @@
 "use client";
-
 import "./films.css";
 import { Navigation } from "../components/nav";
-import PhotoGallery from '../components/PhotoGallery';
 import YouTube, { YouTubeProps } from 'react-youtube';
 import React, { useEffect, useRef, useState } from "react";
 
@@ -26,17 +24,6 @@ const videos = [
 		quote: "''A journey of a thousand miles begins with one single step.''",
 		label: "Israel National Trail",
 	},
-];
-
-const images = [
-	'/assets/demo-images/red-sea/IMG_6034.JPG',
-	'/assets/demo-images/red-sea/IMG_6073.JPG',
-	'/assets/demo-images/red-sea/IMG_5906.JPG',
-	'/assets/demo-images/red-sea/IMG_5912.JPG',
-	'/assets/demo-images/red-sea/IMG_6073.JPG',
-	'/assets/demo-images/red-sea/IMG_5906.JPG',
-	'/assets/demo-images/red-sea/IMG_5912.JPG',
-	// Add more image URLs as needed
 ];
 
 export default function Films() {
@@ -91,10 +78,6 @@ export default function Films() {
 					</div>
 				</div>
 			</header>
-
-
-			<PhotoGallery images={images} />
-			<div className="py-20"></div>
 
 			<div className="container flex flex-col items-center justify-center min-h-screen mx-auto">
 				<div className="grid grid-cols-1 gap-8">

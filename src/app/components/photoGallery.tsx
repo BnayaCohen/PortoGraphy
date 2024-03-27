@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import ImgContainer from "./ImgContainer";
-import { addBlurredDataUrls } from "@/lib/getBase64";
+// import { addBlurredDataUrls } from "@/lib/getBase64";
 
 type PhotoGalleryProps = {
   images: string[];
