@@ -13,7 +13,7 @@ export default function ImgContainer({photo}: Props) {
 
   return(
     <div className="w-full sm:w-[300px] md:w-[250px] mb-[3px] justify-self-center"
-    style={{gridRow: `span ${4}`}}>
+    style={{gridRow: `span ${photoSpans}`}}>
       <div className="grid place-content-center">
         <div className="rounded-[2px] overflow-hidden group">
           <Image

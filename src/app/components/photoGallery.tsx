@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import ImgContainer from "./ImgContainer";
+import { ArrowLeft } from "lucide-react";
 // import { addBlurredDataUrls } from "@/lib/getBase64";
 
 type PhotoGalleryProps = {
@@ -53,9 +54,9 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       )}
       <div className={'w-fit mx-auto columns-1 gap-x-[3px] sm:columns-2 md:columns-3 lg:columns-4'} >
         {images.map((image, index) => (
-          
-          <ImgContainer key={index} photo={{ src: { large: image }, height: 300, width: 250, url: image, blurDataURL: "" }} />
-          
+          <div  onClick={() => handleImageClick(image)}>
+            <ImgContainer key={index} photo={{ src: { large: image }, height: 300, width: 250, url: image, blurDataURL: "" }} />
+          </div>
           // <div key={index} className="relative cursor-pointer aspect-w-1 aspect-h-1">
           //   <img
           //     src={image}
@@ -70,6 +71,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
           //     View
           //   </button>
           // </div>
+        
         ))}
         {selectedImage && (
           <FullScreenImage image={selectedImage} onClose={handleCloseFullScreen} />
@@ -86,19 +88,20 @@ type FullScreenImageProps = {
 
 const FullScreenImage: React.FC<FullScreenImageProps> = ({ image, onClose }) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center z-50" onClick={onClose}>
       <div className="max-w-screen-lg w-full">
         <img
           src={image}
           alt="Full Screen"
           className="w-full h-full object-contain"
+          
         />
-        <button
-          className="absolute top-4 right-4 bg-white rounded-full px-3 py-2 shadow-md"
+        {/* <button
+          className="absolute top-8 left-10 bg-white rounded-full px-3 py-2 shadow-md"
           onClick={onClose}
         >
-          Return
-        </button>
+						<ArrowLeft className="w-6 h-6 " />
+        </button> */}
       </div>
     </div>
   );

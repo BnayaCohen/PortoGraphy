@@ -58,7 +58,7 @@ export default function Films() {
 		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
 
-			<header className="relative isolate overflow-hidden mb-8 bg-gradient-to-tl from-black via-zinc-900 to-black">
+			<header className="relative isolate overflow-hidden mb-8 bg-gradient-to-tl from-black via-zinc-900 to-black" style={{backgroundImage: `url('/assets/images/0Z4A6740.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
 				<div
 					className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${isIntersecting
 						? "bg-zinc-900/0 border-transparent"
@@ -68,10 +68,10 @@ export default function Films() {
 				<div className="container mx-auto relative isolate overflow-hidden pt-24 pb-16 sm:py-32 sm:pb-24">
 					<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 						<div className="mx-auto max-w-2xl lg:mx-0">
-							<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
+							<h1 className="text-4xl drop-shadow-md font-bold tracking-tight text-white sm:text-6xl font-display">
 								Personal Films
 							</h1>
-							<p className="mt-6 text-lg leading-8 text-zinc-300">
+							<p className="mt-6 text-md drop-shadow-sm leading-7 text-zinc-100">
 								I turn experiences into captivating stories. This collection showcases my ability to take real-life adventures and transform them into emotionally resonant videos.
 							</p>
 						</div>
@@ -109,7 +109,7 @@ export default function Films() {
 						</article>
 					))}
 				</div>
-				<div className="py-6"></div>
+				<div className="py-4"></div>
 			</div>
 		</div>
 	);
