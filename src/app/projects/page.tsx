@@ -6,14 +6,13 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { Eye } from "lucide-react";
 
-export const revalidate = 60;
 export default function ProjectsPage() {
 
   function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const allProjects = getAllPosts(['title', 'description', 'image', 'date', 'slug']);
+  const allProjects = getAllPosts(['title', 'description', 'image', 'photos', 'date', 'slug']);
   const views = allProjects.reduce((acc, project) => {
     acc[project.slug] = getRandomInt(0, 1000); // Adjust the range of random views as needed
     return acc;

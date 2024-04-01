@@ -9,6 +9,7 @@ export type PostItems = {
   [key: string]: string;
 };
 
+
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }

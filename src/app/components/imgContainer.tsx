@@ -1,13 +1,12 @@
-import type { Photo } from "@/models/images"
 import Image from "next/image"
 
 type Props ={
-  photo: Photo
+  photoSrc: string
 }
 
-export default function ImgContainer({photo}: Props) {
+export default function ImgContainer({photoSrc}: Props) {
 
-  const widthHeightRatio = photo.height / photo.width
+  const widthHeightRatio = 300 / 250 // photo.height / photo.width
   const galleryHeight = Math.ceil(250 * widthHeightRatio)
   const photoSpans = Math.ceil(galleryHeight / 10) + 1
 
@@ -17,7 +16,7 @@ export default function ImgContainer({photo}: Props) {
       <div className="grid place-content-center">
         <div className="rounded-[2px] overflow-hidden group">
           <Image
-          src={photo.src.large}
+          src={photoSrc}
           alt={"photo"}
           width={250}
           height={375}

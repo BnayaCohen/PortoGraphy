@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { GetStaticPaths, GetStaticProps } from 'next';
 import { getAllPosts, getPostBySlug } from "../../util/Content";
 import { markdownToHtml } from '../../util/Markdown';
 
@@ -10,48 +9,24 @@ import { PostContent } from '../../components/postContent';
 import { Header } from "./header";
 import PhotoGallery from '../../components/photoGallery';
 
-export const revalidate = 60;
-
 type Props = {
   params: {
     slug: string;
   };
 };
 
-// type IPostUrl = {
-//   slug: string;
-// };
-
-// type IPostProps = {
-//   title: string;
-//   description: string;
-//   date: string;
-//   modified_date: string;
-//   image: string;
-//   content: string;
-// };
-
 export default async function PostPage({ params }: Props) {
   const slug = params?.slug;
-  const post = getAllPosts(['title', 'description', 'date', 'slug', 'image', 'content'])
+  const post = getAllPosts(['title', 'description', 'date', 'slug', 'image', 'photos', 'content'])
     .find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
-  } else {
-    post.content = await markdownToHtml(post.content || '');
-  }
+  } else post.content = await markdownToHtml(post.content || '');
 
-  const views = 1665
+  const views: number = 1665
 
-  const images = [
-    '/assets/demo-images/red-sea/IMG_5912.JPG',
-    '/assets/demo-images/red-sea/IMG_6034.JPG',
-    '/assets/demo-images/red-sea/IMG_6073.JPG',
-    '/assets/demo-images/red-sea/IMG_6122.JPG',
-    '/assets/demo-images/red-sea/IMG_5906.JPG',
-    // Add more image URLs as needed
-  ];
+  const images: string[] = post.photos.toString().split(',')
 
   return (
     <div className="bg-zinc-50 min-h-screen">
@@ -66,47 +41,10 @@ export default async function PostPage({ params }: Props) {
           />
         </PostContent>
       </article>
+
       <PhotoGallery images={images} />
       <div className="py-10"></div>
+
     </div>
   );
 }
-
-// export const getStaticPaths: GetStaticPaths<IPostUrl> = async () => {
-//   const posts = getAllPosts(['slug']);
-
-//   return {
-//     paths: posts.map((post) => ({
-//       params: {
-//         slug: post.slug,
-//       },
-//     })),
-//     fallback: false,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({
-//   params,
-// }) => {
-//   const post = getPostBySlug(params!.slug, [
-//     'title',
-//     'description',
-//     'date',
-//     'modified_date',
-//     // 'image',
-//     'content',
-//     'slug',
-//   ]);
-//   const content = await markdownToHtml(post.content || '');
-
-//   return {
-//     props: {
-//       title: post.title,
-//       description: post.description,
-//       date: post.date,
-//       modified_date: post.modified_date,
-//       // image: post.image,
-//       content,
-//     },
-//   };
-// };
