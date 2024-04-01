@@ -54,8 +54,8 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       )}
       <div className={'w-fit mx-auto columns-1 gap-x-[3px] sm:columns-2 md:columns-3 lg:columns-4'} >
         {images.map((image, index) => (
-          <div  onClick={() => handleImageClick(image)}>
-            <ImgContainer key={index} photoSrc={image} />
+          <div key={index} onClick={() => handleImageClick(image)}>
+            <ImgContainer photoSrc={image} />
           </div>
           // <div key={index} className="relative cursor-pointer aspect-w-1 aspect-h-1">
           //   <img
