@@ -41,12 +41,17 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
 
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
+    // Disable scrolling
+    document.body.style.overflow = 'hidden';
   };
 
   const handleCloseFullScreen = () => {
     setSelectedImage(null);
+    // Enable scrolling
+    document.body.style.overflow = '';
   };
-// `w-fit mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 ${galleryReady ? '' : 'hidden'}`     px-1 my-3 gap-1 grid grid-cols-gallery auto-rows-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+  
+  // `w-fit mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 ${galleryReady ? '' : 'hidden'}`     px-1 my-3 gap-1 grid grid-cols-gallery auto-rows-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
   return (
     <>
       {!galleryReady && (
