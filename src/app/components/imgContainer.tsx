@@ -11,7 +11,7 @@ export default function ImgContainer({photoSrc}: Props) {
   const photoSpans = Math.ceil(galleryHeight / 10) + 1
 
   return(
-    <div className="w-full sm:w-[300px] md:w-[250px] mb-[3px] justify-self-center"
+    <div className="w-full sm:w-[] md:w-[`calc(100vw / 3)`] mb-[3px] justify-self-center"
     style={{gridRow: `span ${photoSpans}`}}>
       <div className="grid place-content-center">
         <div className="rounded-[2px] overflow-hidden group">
