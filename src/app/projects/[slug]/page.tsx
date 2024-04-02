@@ -26,7 +26,7 @@ export default async function PostPage({ params }: Props) {
 
   const views: number = 1665
 
-  const images: string[] = post.photos.toString().split(',')
+  const images: string[] = post.photos?.toString().split(',')
 
   return (
     <div className="bg-zinc-50 min-h-screen">

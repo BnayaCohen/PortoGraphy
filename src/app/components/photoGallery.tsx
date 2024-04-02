@@ -13,7 +13,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
   const [galleryReady, setGalleryReady] = useState<boolean>(true);
 
   useEffect(() => {
-    const imagesToLoad = images.map((image) => {
+    const imagesToLoad = images?.map((image) => {
       const img = new Image();
       img.src = image;
       return img;
@@ -28,12 +28,12 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       }
     };
 
-    imagesToLoad.forEach((img) => {
+    imagesToLoad?.forEach((img) => {
       img.onload = checkLoadedCount;
     });
 
     return () => {
-      imagesToLoad.forEach((img) => {
+      imagesToLoad?.forEach((img) => {
         img.onload = null;
       });
     };
@@ -50,7 +50,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
     // Enable scrolling
     document.body.style.overflow = '';
   };
-  
+
   // `w-fit mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 ${galleryReady ? '' : 'hidden'}`     px-1 my-3 gap-1 grid grid-cols-gallery auto-rows-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
   return (
     <>
@@ -58,7 +58,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
         <div className="text-center">Loading...</div>
       )}
       <div className={'w-fit mx-auto columns-1 gap-x-[3px] sm:columns-2 md:columns-3 lg:columns-4'} >
-        {images.map((image, index) => (
+        {images ? images.map((image, index) => (
           <div key={index} onClick={() => handleImageClick(image)}>
             <ImgContainer photoSrc={image} />
           </div>
@@ -77,7 +77,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
           //   </button>
           // </div>
         
-        ))}
+        )) : null}
         {selectedImage && (
           <FullScreenImage image={selectedImage} onClose={handleCloseFullScreen} />
         )}
