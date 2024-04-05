@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 const videos = [
 	{
 		url: "6zpqjak-ZXc",
-		description: "This project captures the essence of my transformative 8-month adventure across South America. It demonstrates the power of visual storytelling and sound design to evoke emotions and create lasting memories.",
+		description: "This project captures my transformative 8-month adventure across South America. It demonstrates the power of visual storytelling and sound design to evoke emotions and create memories.",
 		quote: "''Don’t ask what the world needs. Ask what makes you come alive, and go do it. Because what the world needs is more people to come alive.''  Howard Thurman.",
 		label: "South America",
 	},
@@ -72,7 +72,7 @@ export default function Films() {
 								Personal Films
 							</h1>
 							<p className="mt-6 text-md drop-shadow-sm leading-7 text-zinc-100">
-								I turn experiences into captivating stories. This collection showcases my ability to take real-life adventures and transform them into emotionally resonant videos.
+								I turn experiences into stories. This collection showcases my ability to take real-life adventures and transform them into emotionally resonant videos.
 							</p>
 						</div>
 					</div>
@@ -102,9 +102,10 @@ export default function Films() {
 								</div>
 							</div>
 							{index !== videos.length - 1 && (
-								<div className="flex justify-center">
-									<div className="w-10/12 bg-gradient-to-r from-transparent via-zinc-500 to-transparent pt-px" />
-								</div>
+								// <div className="flex justify-center">
+								// 	<div className="w-10/12 bg-gradient-to-r from-transparent via-zinc-500 to-transparent pt-px" />
+								// </div>
+								<div className="w-full h-px bg-zinc-800" />
 							)}
 						</article>
 					))}
