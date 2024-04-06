@@ -22,7 +22,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 
 	return (
 		<div
-			onMouseMove={onMouseMove}
+			onMouseMove={onMouseMove} //border 
 			className="overflow-hidden relative duration-700 rounded-[3px] hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 "
 		>
 			<div className="pointer-events-none">

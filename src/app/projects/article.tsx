@@ -1,6 +1,9 @@
+"use client"
 import { PostItems } from '../util/Content';
 import Link from "next/link";
 // import { Eye, View } from "lucide-react";
+import React, { useEffect, useState } from 'react';
+import { getAverageColorFromImageUrl, getComplementaryColor } from '../util/getAverageColor';
 
 type Props = {
 	project: PostItems;
@@ -8,9 +11,25 @@ type Props = {
 };
 
 export const Article: React.FC<Props> = ({ project }) => { // , views 
+	const [averageColor, setAverageColor] = useState<string>('#000');
+	const [compColor, setCompColor] = useState<string>('#000');
+
+	useEffect(() => {
+		async function fetchAverageColor() {
+			try {
+				const color: string = await getAverageColorFromImageUrl(project.image);
+				setAverageColor(color);
+				setCompColor(getComplementaryColor(color));
+			} catch (error) {
+				console.error('Error fetching average color:', error);
+			}
+		}
+		fetchAverageColor();
+	}, [project.image]);
+
 	return (
 		<Link href={`/projects/${project.slug}`}>
-			<article className="p-4 md:p-8" style={{ backgroundImage: `url(${project.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+			<article className="p-4 md:p-8 h-60 sm:h-80" style={{ backgroundImage: `url(${project.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 				{/* <div className="flex justify-between gap-2 items-center">
 					<span className="text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange">
 						{project.date ? (
@@ -28,9 +47,12 @@ export const Article: React.FC<Props> = ({ project }) => { // , views
 						{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}
 					</span>
 				</div> */}
-				<h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
-					{project.title}
-				</h2>
+				{averageColor !== '#000' ?
+					<h2 className={`z-20 text-zinc-200 text-xl drop-shadow-sm font-medium duration-1000 lg:text-3xl group-hover:text-white font-display`}
+					style={{color: compColor,  textShadow: `0 0 0px #ffffff, 0 0 0px ${averageColor}`}}>
+						{project.title}
+					</h2>
+					: null}
 				{/* <p className="z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200">
 					{project.description}
 				</p> */}

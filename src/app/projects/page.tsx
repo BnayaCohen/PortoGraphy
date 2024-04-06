@@ -48,10 +48,10 @@ export default function ProjectsPage() {
         </div>
         <div className="w-full h-px bg-zinc-800" />
 
-        <div className="grid grid-cols-1 gap-1 mx-auto lg:grid-cols-2 ">
+        <div className="grid grid-cols-1 gap-1 mx-auto lg:grid-cols-2">
           <Card>
             <Link href={`/projects/${featured.slug}`}>
-              <article className="relative w-full h-full p-4 md:p-8" style={{ backgroundImage: `url(${featured.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <article className="relative w-full p-4 h-60 sm:h-80 md:p-8 lg:h-full" style={{ backgroundImage: `url(${featured.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <h2
                   id="featured-post"
                   className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
           <div className="flex flex-col w-full gap-1 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
             {[top2, top3].map((project) => (
               <Card key={project.slug}>
-                <Article project={project} /> {/* views={views[project.slug] ?? 0} */}
+                <Article project={project} />
               </Card>
             ))}
           </div>
@@ -86,7 +86,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((project) => (
                 <Card key={project.slug}>
-                 <Article project={project} /> {/* views={views[project.slug] ?? 0} */}
+                 <Article project={project} />
                 </Card>
               ))}
           </div>
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 1)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} /> {/* views={views[project.slug] ?? 0} */}
+                  <Article project={project} />
                 </Card>
               ))}
           </div>
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 2)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} /> {/* views={views[project.slug] ?? 0} */}
+                  <Article project={project} />
                 </Card>
               ))}
           </div>
