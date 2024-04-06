@@ -3,7 +3,7 @@ import { PostItems } from '../util/Content';
 import Link from "next/link";
 // import { Eye, View } from "lucide-react";
 import React, { useEffect, useState } from 'react';
-import { getAverageColorFromImageUrl, getComplementaryColor } from '../util/getAverageColor';
+import { getAverageColorFromImageUrl, getComplementaryColor, getContrastColor } from '../util/getAverageColor';
 
 type Props = {
 	project: PostItems;
@@ -19,7 +19,7 @@ export const Article: React.FC<Props> = ({ project }) => { // , views
 			try {
 				const color: string = await getAverageColorFromImageUrl(project.image);
 				setAverageColor(color);
-				setCompColor(getComplementaryColor(color));
+				setCompColor(getContrastColor(color));
 			} catch (error) {
 				console.error('Error fetching average color:', error);
 			}
@@ -47,12 +47,13 @@ export const Article: React.FC<Props> = ({ project }) => { // , views
 						{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}
 					</span>
 				</div> */}
-				{averageColor !== '#000' ?
-					<h2 className={`z-20 text-zinc-200 text-xl drop-shadow-sm font-medium duration-1000 lg:text-3xl group-hover:text-white font-display`}
-					style={{color: compColor,  textShadow: `0 0 0px #ffffff, 0 0 0px ${averageColor}`}}>
-						{project.title}
-					</h2>
-					: null}
+
+				<h2 className={`z-20 text-zinc-200 text-xl text-right drop-shadow-sm font-medium duration-1000 lg:text-3xl group-hover:text-white font-display`}
+					 style={{ color: averageColor, textShadow: `0 0 0px ${compColor}, 0 0 2px ${compColor}` }}>
+						 {/*  */}
+					{project.title}
+				</h2>
+				
 				{/* <p className="z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200">
 					{project.description}
 				</p> */}

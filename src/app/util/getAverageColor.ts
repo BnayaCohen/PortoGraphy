@@ -72,6 +72,22 @@ export function getComplementaryColor(hexColor: string): string {
   return complementaryColor;
 }
 
+export function getContrastColor(hexColor: string): string {
+  // Remove the '#' symbol if present
+  const cleanHexColor = hexColor.replace('#', '');
+
+  // Parse the hex color components
+  const r = parseInt(cleanHexColor.substr(0, 2), 16) / 255;
+  const g = parseInt(cleanHexColor.substr(2, 2), 16) / 255;
+  const b = parseInt(cleanHexColor.substr(4, 2), 16) / 255;
+
+  // Calculate the relative luminance
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+
+  // Choose white or black based on the luminance value
+  return luminance > 0.5 ? '#000000' : '#FFFFFF';
+}
+
 // Example usage:
 const imageUrl = 'https://example.com/image.jpg';
 getAverageColorFromImageUrl(imageUrl)

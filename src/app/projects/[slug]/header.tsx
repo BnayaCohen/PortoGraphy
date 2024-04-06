@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 type Props = {
 	post: {
 		url?: string;
+		image?: string;
 		title?: string;
 		description?: string;
 		repository?: string;
@@ -44,6 +45,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 		<header
 			ref={ref}
 			className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
+			style={{backgroundImage: `url('${post.image}')`, backgroundSize: 'cover', backgroundPosition: 'center'}}
 		>
 			<div
 				className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
