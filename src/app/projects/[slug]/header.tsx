@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -9,22 +9,13 @@ type Props = {
 		image?: string;
 		title?: string;
 		description?: string;
-		repository?: string;
 	};
-
-	views: number;
 };
-export const Header: React.FC<Props> = ({ post, views }) => {
+export const Header: React.FC<Props> = ({ post }) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
 
 	const links: { label: string; href: string }[] = [];
-	if (post.repository) {
-		links.push({
-			label: "GitHub",
-			href: `https://github.com/${post.repository}`,
-		});
-	}
 	if (post.url) {
 		links.push({
 			label: "Website",
@@ -48,7 +39,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 			style={{backgroundImage: `url('${post.image}')`, backgroundSize: 'cover', backgroundPosition: 'center'}}
 		>
 			<div
-				className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
+				className={`fixed inset-x-0 top-0 z-50 duration-200 border-b lg:bg-transparent ${
 					isIntersecting
 						? "bg-zinc-900/0 border-transparent"
 						: "bg-white/10  border-zinc-200 lg:border-transparent"
@@ -56,44 +47,24 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
 					<div className="flex justify-between gap-8">
-						<span
-							title="View counter for this page"
-							className={`duration-200 hover:font-medium flex items-center gap-1 ${
-								isIntersecting
-									? " text-zinc-400 hover:text-zinc-100"
-									: "text-zinc-600 hover:text-zinc-900"
-							} `}
-						>
-							<Eye className="w-5 h-5" />{" "}
-							{Intl.NumberFormat("en-US", { notation: "compact" }).format(
-								views,
-							)}
-						</span>
-						<Link target="_blank" href="https://twitter.com/chronark_">
-							<Twitter
-								className={`w-6 h-6 duration-200 hover:font-medium ${
-									isIntersecting
-										? " text-zinc-400 hover:text-zinc-100"
-										: "text-zinc-600 hover:text-zinc-900"
-								} `}
-							/>
-						</Link>
-						<Link target="_blank" href="https://github.com/chronark">
-							<Github
-								className={`w-6 h-6 duration-200 hover:font-medium ${
-									isIntersecting
-										? " text-zinc-400 hover:text-zinc-100"
-										: "text-zinc-600 hover:text-zinc-900"
-								} `}
-							/>
-						</Link>
+					<Link
+						href="/contact"
+						className={`duration-200 hover:font-medium ${
+							isIntersecting
+								? " text-zinc-100 hover:text-zinc-900"
+								: "text-zinc-600 hover:text-zinc-900"
+						} `}
+					>
+						<MessageCircle className="w-6 h-6 " />
+					</Link>
+		
 					</div>
 
 					<Link
 						href="/projects"
 						className={`duration-200 hover:font-medium ${
 							isIntersecting
-								? " text-zinc-400 hover:text-zinc-100"
+								? " text-zinc-100 hover:text-zinc-900"
 								: "text-zinc-600 hover:text-zinc-900"
 						} `}
 					>
@@ -107,7 +78,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
 							{post.title}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-zinc-300">
+						 <p className="mt-6 text-lg leading-8 text-white">{/*text-zinc-300 */}
 							{post.description}
 						</p>
 					</div>

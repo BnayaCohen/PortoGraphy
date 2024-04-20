@@ -57,26 +57,12 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       {!galleryReady && (
         <div className="text-center">Loading...</div>
       )}
-      <div className={'w-fit mx-auto columns-1 gap-x-[3px] sm:columns-2 md:columns-3 lg:columns-4'} >
+      <div className={'w-fit mx-auto columns-1 gap-x-[2px] sm:columns-2 md:columns-3 lg:columns-4'} >
         {images ? images.map((image, index) => (
           <div key={index} onClick={() => handleImageClick(image)}>
             <ImgContainer photoSrc={image} />
           </div>
-          // <div key={index} className="relative cursor-pointer aspect-w-1 aspect-h-1">
-          //   <img
-          //     src={image}
-          //     alt={`Photo ${index}`}
-          //     className="absolute inset-0 w-full h-full object-cover rounded-lg"
-          //     onClick={() => handleImageClick(image)}
-          //   />
-          //   <button
-          //     className="absolute top-2 right-2 bg-white rounded-full px-2 py-1 shadow-md"
-          //     onClick={() => handleImageClick(image)}
-          //   >
-          //     View
-          //   </button>
-          // </div>
-        
+
         )) : null}
         {selectedImage && (
           <FullScreenImage image={selectedImage} onClose={handleCloseFullScreen} />
@@ -93,7 +79,7 @@ type FullScreenImageProps = {
 
 const FullScreenImage: React.FC<FullScreenImageProps> = ({ image, onClose }) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center z-50" onClick={onClose}>
+    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex items-center justify-center z-50" onClick={onClose}>
       <div className="max-w-screen-lg w-full">
         <img
           src={image}

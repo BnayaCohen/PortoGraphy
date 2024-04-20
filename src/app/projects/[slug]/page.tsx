@@ -24,16 +24,13 @@ export default async function PostPage({ params }: Props) {
     notFound();
   } else post.content = await markdownToHtml(post.content || '');
 
-  const views: number = 1665
-
   const images: string[] = post.photos?.toString().split(',')
 
   return (
     <div className="bg-zinc-50 min-h-screen">
-      <Header post={post} views={views} />
-      {/* <ReportView slug={post.slug} /> */}
+      <Header post={post} />
 
-      <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
+     <article className="px-4 mx-auto prose prose-zinc prose-quoteless"> {/* py-12  */}
         {/* <Mdx code={post.body.code} /> */}
         <PostContent>
           <div

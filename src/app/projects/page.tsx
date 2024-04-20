@@ -4,7 +4,6 @@ import { getAllPosts } from "../util/Content";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
-import { Eye } from "lucide-react";
 
 export default function ProjectsPage() {
 
