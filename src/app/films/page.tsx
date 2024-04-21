@@ -65,13 +65,13 @@ export default function Films() {
 						: "bg-white/10  border-zinc-200 lg:border-transparent"
 						}`}
 				></div>
-				<div className="container mx-auto relative isolate overflow-hidden pt-24 pb-16 sm:py-32 sm:pb-24">
+				<div className="container mx-auto relative isolate overflow-hidden pt-20 pb-16 sm:py-32 sm:pb-24">
 					<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 						<div className="mx-auto max-w-2xl lg:mx-0">
 							<h1 className="text-4xl drop-shadow-md font-bold tracking-tight text-white sm:text-6xl font-display">
 								Personal Films
 							</h1>
-							<p className="mt-6 text-md drop-shadow-sm leading-7 text-zinc-50">
+							<p className="mt-4 text-md drop-shadow-sm leading-7 text-zinc-50">
 								I turn experiences into stories. This collection showcases my ability to take real-life adventures and transform them into emotionally resonant videos.
 							</p>
 						</div>

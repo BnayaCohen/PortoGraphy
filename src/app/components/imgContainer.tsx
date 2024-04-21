@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useState } from "react"
+import { Eye } from "lucide-react";
 
 type Props = {
   photoSrc: string
@@ -38,7 +39,7 @@ export default function ImgContainer({ photoSrc }: Props) {
           />
           {hovered && (
             <div className="absolute inset-0 flex items-center justify-center z-50">
-              <div className="text-zinc-600 font-semibold px-4 py-2 rounded-md">View</div>
+              <div className="text-zinc-600 font-semibold px-4 py-2 rounded-md"><Eye size={30} /></div>
             </div>
           )}
         </div>
