@@ -71,7 +71,7 @@ export default function Films() {
 							<h1 className="text-4xl drop-shadow-md font-bold tracking-tight text-white sm:text-6xl font-display">
 								Personal Films
 							</h1>
-							<p className="mt-6 text-md drop-shadow-sm leading-7 text-zinc-100">
+							<p className="mt-6 text-md drop-shadow-sm leading-7 text-zinc-50">
 								I turn experiences into stories. This collection showcases my ability to take real-life adventures and transform them into emotionally resonant videos.
 							</p>
 						</div>
