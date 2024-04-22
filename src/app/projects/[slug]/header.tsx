@@ -36,37 +36,34 @@ export const Header: React.FC<Props> = ({ post }) => {
 		<header
 			ref={ref}
 			className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
-			style={{backgroundImage: `url('${post.image}')`, backgroundSize: 'cover', backgroundPosition: 'center'}}
+			style={{ backgroundImage: `url('${post.image}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
 		>
 			<div
-				className={`fixed inset-x-0 top-0 z-50 duration-200 border-b lg:bg-transparent ${
-					isIntersecting
-						? "bg-zinc-900/0 border-transparent"
-						: "bg-white/10  border-zinc-200 lg:border-transparent"
-				}`}
+				className={`fixed inset-x-0 top-0 z-50 duration-200 border-b lg:bg-transparent ${isIntersecting
+					? "bg-zinc-900/0 border-transparent"
+					: "bg-white/10  border-zinc-200 lg:border-transparent"
+					}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
 					<div className="flex justify-between gap-8">
-					<Link
-						href="/contact"
-						className={`duration-200 hover:font-medium ${
-							isIntersecting
+						<Link
+							href="/contact"
+							className={`duration-200 hover:font-medium ${isIntersecting
 								? " text-zinc-100 hover:text-zinc-900"
 								: "text-zinc-600 hover:text-zinc-900"
-						} `}
-					>
-						<MessageCircle className="w-6 h-6 " />
-					</Link>
-		
+								} `}
+						>
+							<MessageCircle className="w-6 h-6 " />
+						</Link>
+
 					</div>
 
 					<Link
 						href="/projects"
-						className={`duration-200 hover:font-medium ${
-							isIntersecting
-								? " text-zinc-100 hover:text-zinc-900"
-								: "text-zinc-600 hover:text-zinc-900"
-						} `}
+						className={`duration-200 hover:font-medium ${isIntersecting
+							? " text-zinc-100 hover:text-zinc-900"
+							: "text-zinc-600 hover:text-zinc-900"
+							} `}
 					>
 						<ArrowLeft className="w-6 h-6 " />
 					</Link>
@@ -78,7 +75,7 @@ export const Header: React.FC<Props> = ({ post }) => {
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
 							{post.title}
 						</h1>
-						 <p className="mt-6 text-lg leading-8 text-white">{/*text-zinc-300 */}
+						<p className="mt-6 text-lg leading-8 text-white">{/*text-zinc-300 */}
 							{post.description}
 						</p>
 					</div>

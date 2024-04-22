@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "../../util/Content";
+import { getAllPosts } from "../../util/Content";
 import { markdownToHtml } from '../../util/Markdown';
 
 // import { Mdx } from "@/app/components/mdx";
@@ -16,6 +16,7 @@ type Props = {
 };
 
 export default async function PostPage({ params }: Props) {
+
   const slug = params?.slug;
   const post = getAllPosts(['title', 'description', 'date', 'slug', 'image', 'photos', 'content'])
     .find((post) => post.slug === slug);
@@ -30,7 +31,7 @@ export default async function PostPage({ params }: Props) {
     <div className="bg-zinc-50 min-h-screen">
       <Header post={post} />
 
-     <article className="px-4 mx-auto prose prose-zinc prose-quoteless"> {/* py-12  */}
+      <article className="px-4 mx-auto prose prose-zinc prose-quoteless"> {/* py-12  */}
         {/* <Mdx code={post.body.code} /> */}
         <PostContent>
           <div

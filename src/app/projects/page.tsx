@@ -45,7 +45,7 @@ export default function ProjectsPage() {
             Some of the projects are from work and some are on my own time.
           </p> */}
         </div>
-        <div className="w-full mt-0 h-px bg-zinc-800" />
+        <div className="hidden w-full h-px md:block bg-zinc-800"  />
 
         <div className="grid grid-cols-1 gap-1 mx-auto lg:grid-cols-2">
           <Card>
@@ -77,6 +77,10 @@ export default function ProjectsPage() {
             ))}
           </div>
         </div>
+
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+          Videography Projects
+        </h2>
         <div className="hidden w-full h-px md:block bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-1 mx-auto lg:mx-0 md:grid-cols-3">
@@ -85,7 +89,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((project) => (
                 <Card key={project.slug}>
-                 <Article project={project} />
+                  <Article project={project} />
                 </Card>
               ))}
           </div>
