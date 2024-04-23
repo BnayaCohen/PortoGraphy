@@ -88,12 +88,12 @@ export function getContrastColor(hexColor: string): string {
   return luminance > 0.5 ? '#000000' : '#FFFFFF';
 }
 
-// Example usage:
-const imageUrl = 'https://example.com/image.jpg';
-getAverageColorFromImageUrl(imageUrl)
-  .then((averageColor) => {
-      console.log('Average color:', averageColor);
-  })
-  .catch((error) => {
-      console.error('Error:', error);
-  });
+// // Example usage:
+// const imageUrl = 'https://example.com/image.jpg';
+// getAverageColorFromImageUrl(imageUrl)
+//   .then((averageColor) => {
+//       console.log('Average color:', averageColor);
+//   })
+//   .catch((error) => {
+//       console.error('Error:', error);
+//   });

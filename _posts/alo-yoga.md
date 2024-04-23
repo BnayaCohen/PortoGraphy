@@ -1,5 +1,5 @@
 ---
-title: 'Alo Yoga'
+title: 'alo yoga'
 description: alo yoga yearly event
 date: '2024-02-22'
 image: '/assets/demo-images/alo-yoga/0Z4A5730.JPG'

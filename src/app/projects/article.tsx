@@ -4,6 +4,7 @@ import Link from "next/link";
 // import { Eye, View } from "lucide-react";
 import React, { useEffect, useState } from 'react';
 import { getAverageColorFromImageUrl, getComplementaryColor, getContrastColor } from '../util/getAverageColor';
+import Vibrant from 'node-vibrant';
 
 type Props = {
 	project: PostItems;
@@ -16,12 +17,37 @@ export const Article: React.FC<Props> = ({ project }) => { // , views
 
 	useEffect(() => {
 		async function fetchAverageColor() {
+			if(!project.image) return
 			try {
 				const color: string = await getAverageColorFromImageUrl(project.image);
+				// console.log(getComplementaryColor('#6e6b6e'));
+
+
+				// const vibrant = new Vibrant(project.image);
+				// console.log(vibrant);
+
+				// // Generate the palette
+				// const palette = await vibrant.getPalette();
+				// console.log(palette);
+
+
+				// // Get the dominant color
+				// const dominantColor = palette.Vibrant?.hex || '#FFFFFF'; // Default to white if no dominant color is found
+				// console.log(dominantColor)
+
+				Vibrant.from('assets/demo-images/alo-yoga/0Z4A5730.JPG').getPalette()
+				.then(function(palette) {
+					console.log(palette);
+				})
+				.catch(error => {
+					console.log(error);
+				});
+
+
 				setAverageColor(color);
 				setCompColor(getContrastColor(color));
 			} catch (error) {
-				console.error('Error fetching average color:', error);
+				console.error('Error fetching average color:',project.title, error);
 			}
 		}
 		fetchAverageColor();
@@ -49,11 +75,11 @@ export const Article: React.FC<Props> = ({ project }) => { // , views
 				</div> */}
 
 				<h2 className={`z-20 text-zinc-200 text-xl text-right drop-shadow-sm font-medium duration-1000 lg:text-3xl group-hover:text-white font-display`}
-					 style={{ color: averageColor, textShadow: `0 0 0px ${compColor}, 0 0 2px ${compColor}` }}>
-						 {/*  */}
+					style={{ color: averageColor, textShadow: `0 0 0px ${compColor}, 0 0 2px ${compColor}` }}>
+					{/*  */}
 					{project.title}
 				</h2>
-				
+
 				{/* <p className="z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200">
 					{project.description}
 				</p> */}

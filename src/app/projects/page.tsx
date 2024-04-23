@@ -45,18 +45,19 @@ export default function ProjectsPage() {
             Some of the projects are from work and some are on my own time.
           </p>
         </div>
-        <div className="hidden w-full h-px md:block bg-zinc-800"  />
+        <div className="hidden w-full h-px md:block bg-zinc-800" />
         <h4 className="text-lg font-bold text-center tracking-tight text-zinc-100 sm:text-2xl">
-            Photography
-          </h4>
+          Photography
+        </h4>
 
         <div className="grid grid-cols-1 gap-1 mx-auto mt-0 lg:grid-cols-2">
-          <Card>
+          <Card> 
             <Link href={`/projects/${featured.slug}`}>
               <article className="relative w-full p-4 h-60 sm:h-80 md:p-8 lg:h-full" style={{ backgroundImage: `url(${featured.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <h2
                   id="featured-post"
                   className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                  style={{ color: '#d8c5bd', textShadow: `0 0 0px black, 0 0 1px black` }}
                 >
                   {featured.title}
                 </h2>
@@ -81,10 +82,10 @@ export default function ProjectsPage() {
           </div>
         </div>
 
+        <div className="hidden w-full h-px md:block bg-zinc-800" />
         <h4 className="text-lg font-bold text-center tracking-tight text-zinc-100 sm:text-2xl">
           Videography
         </h4>
-        <div className="hidden w-full h-px md:block bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-1 mx-auto lg:mx-0 md:grid-cols-3">
           <div className="grid grid-cols-1 gap-1">

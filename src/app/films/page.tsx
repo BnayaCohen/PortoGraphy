@@ -2,7 +2,7 @@
 import "./films.css";
 import { Navigation } from "../components/nav";
 import YouTube, { YouTubeProps } from 'react-youtube';
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 
 const videos = [
 	{
@@ -93,7 +93,10 @@ export default function Films() {
 									</div>
 									<div className="w-full">
 										<div className="embed-responsive">
+										<Suspense fallback={<p>Loading video...</p>}>
+
 											<YouTube videoId={video.url} opts={opts} />
+										</Suspense>
 										</div>
 									</div>
 									<div className="text-sm w-10/12 text-center text-zinc-500">
