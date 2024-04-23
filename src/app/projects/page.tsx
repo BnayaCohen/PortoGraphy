@@ -17,7 +17,7 @@ export default function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
 
-  const featured = allProjects.find((project) => project.slug === "template")!;
+  const featured = allProjects.find((project) => project.slug === "alo-yoga")!;
   const top2 = allProjects.find((project) => project.slug === "red-sea")!;
   const top3 = allProjects.find((project) => project.slug === "snow")!;
   const sorted = allProjects
@@ -81,9 +81,9 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-          Videography Projects
-        </h2>
+        <h4 className="text-lg font-bold text-center tracking-tight text-zinc-100 sm:text-2xl">
+          Videography
+        </h4>
         <div className="hidden w-full h-px md:block bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-1 mx-auto lg:mx-0 md:grid-cols-3">
