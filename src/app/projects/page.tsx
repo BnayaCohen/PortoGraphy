@@ -50,18 +50,19 @@ export default function ProjectsPage() {
           Photography
         </h4>
 
-        <div className="grid grid-cols-1 gap-1 mx-auto mt-0 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-1 mx-auto lg:grid-cols-2">
           <Card> 
             <Link href={`/projects/${featured.slug}`}>
               <article className="relative w-full p-4 h-60 sm:h-80 md:p-8 lg:h-full" style={{ backgroundImage: `url(${featured.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <h2
                   id="featured-post"
                   className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                  style={{ color: '#d8c5bd', textShadow: `0 0 0px black, 0 0 1px black` }}
+                  style={{ color: '#fff', textShadow: `0 0 0px black, 0 0 1px black` }}
                 >
                   {featured.title}
                 </h2>
-                <p className="hidden mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300 lg:block">
+                <p className="hidden mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300 lg:block"
+                style={{ color: '#fff'}}>
                   {featured.description}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
