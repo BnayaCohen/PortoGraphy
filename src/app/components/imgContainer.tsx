@@ -15,9 +15,9 @@ export default function ImgContainer({ photoSrc }: Props) {
 
   return (
     <div className="w-full sm:w-[] md:w-[`calc(100vw / 3)`] mb-[2px] justify-self-center"
-    onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-      style={{ gridRow: `span ${photoSpans}` }}>
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ }}>
       <div className="grid place-content-center">
         <div className="relative rounded-[1px] overflow-hidden group">
           <Image
@@ -35,7 +35,7 @@ export default function ImgContainer({ photoSrc }: Props) {
             placeholder="blur"
             blurDataURL={"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcXg8AAfMBOOg8T0oAAAAASUVORK5CYII="}
             className="group-hover:opacity-65 cursor-pointer group-hover:hidden-text:opacity-100"
-            
+
           />
           {hovered && (
             <div className="absolute inset-0 flex items-center justify-center z-50">
