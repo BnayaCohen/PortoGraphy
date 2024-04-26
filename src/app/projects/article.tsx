@@ -11,8 +11,8 @@ type Props = {
 };
 
 export const Article: React.FC<Props> = ({ project }) => { // , views 
-	const [averageColor, setAverageColor] = useState<string>('#ffffff');
-	const [compColor, setCompColor] = useState<string>('#000000');
+	// const [averageColor, setAverageColor] = useState<string>('#ffffff');
+	// const [compColor, setCompColor] = useState<string>('#000000');
 
 	useEffect(() => {
 		async function fetchAverageColor() {
@@ -24,8 +24,8 @@ export const Article: React.FC<Props> = ({ project }) => { // , views
 			// 		setAverageColor(getComplementaryColor(dominantColor));
 			// });
 
-				setAverageColor(color);
-				setCompColor(getContrastColor(color));
+				// setAverageColor(color);
+				// setCompColor(getContrastColor(color));
 			} catch (error) {
 				console.error('Error fetching average color:',project.title, error);
 			}
