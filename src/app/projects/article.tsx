@@ -3,7 +3,7 @@ import { PostItems } from '../util/Content';
 import Link from "next/link";
 // import { Eye, View } from "lucide-react";
 import React, { useEffect, useState } from 'react';
-import { extractDominantColor, getAverageColorFromImageUrl, getComplementaryColor, getContrastColor } from '../util/getAverageColor';
+import { getAverageColorFromImageUrl, getComplementaryColor, getContrastColor } from '../util/getAverageColor';
 
 type Props = {
 	project: PostItems;
