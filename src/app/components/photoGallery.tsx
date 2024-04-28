@@ -57,7 +57,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       {!galleryReady && (
         <div className="text-center">Loading...</div>
       )}
-      <div className={'w-fit mx-auto columns-2 gap-x-[2px] sm:columns-2 md:columns-3 lg:columns-4'} style={{breakInside: 'avoid'}}>
+      <div className={'w-fit mx-auto columns-2 gap-[3px] sm:columns-2 md:columns-3 lg:columns-4 xl:w-[1280px]'} style={{breakInside: 'avoid'}}>
         {images ? images.map((image, index) => (
           <div key={index} onClick={() => handleImageClick(image)}>
             <ImgContainer photoSrc={image} />

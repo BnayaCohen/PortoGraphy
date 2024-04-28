@@ -11,7 +11,7 @@ export default function ImgContainer({ photoSrc }: Props) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full sm:w-[] md:w-[`calc(100vw / 3)`] mb-[2px] justify-self-center"
+    <div className="w-full sm:w-[] md:w-[`calc(100vw / 3)`] mb-[3px] justify-self-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
       <div className="grid place-content-center">
@@ -35,7 +35,7 @@ export default function ImgContainer({ photoSrc }: Props) {
           />
           {hovered && (
             <div className="absolute inset-0 opacity-60 flex items-center justify-center z-50">
-              <div className="text-zinc-800 bg-zinc-200 px-5 py-4 rounded-2xl  transition-opacity duration-1000"><Eye size={30} /></div>
+              <div className="text-zinc-800 bg-zinc-200 px-3 py-2 rounded-[3px]"><Eye size={30} /></div>
             </div>
           )}
         </div>

@@ -7,15 +7,7 @@ import { Article } from "./article";
 
 export default function ProjectsPage() {
 
-  function getRandomInt(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
   const allProjects = getAllPosts(['title', 'description', 'image', 'photosFolder', 'date', 'slug']);
-  const views = allProjects.reduce((acc, project) => {
-    acc[project.slug] = getRandomInt(0, 1000); // Adjust the range of random views as needed
-    return acc;
-  }, {} as Record<string, number>);
 
   const featured = allProjects.find((project) => project.slug === "alo-yoga")!;
   const top2 = allProjects.find((project) => project.slug === "red-sea")!;

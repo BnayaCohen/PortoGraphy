@@ -6,6 +6,6 @@ image: /assets/demo-images/alo-yoga/0Z4A5730.JPG
 photosFolder: public/assets/demo-images/alo-yoga
 ---
 
-#### The photos were taken by the old Canon 700D ####
+### every year alo celebrates with their embassadors ###
 
-Special Model: YamBa
+The whole event was shot under direct sunlight
