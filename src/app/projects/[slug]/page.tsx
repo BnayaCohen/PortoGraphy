@@ -46,7 +46,7 @@ export default async function PostPage({ params }: Props) {
     <div className="min-h-screen">
       <Header post={post} />
 
-      <article className="px-4 mx-auto prose prose-zinc prose-quoteless prose-p:text-white"> {/* py-12  */}
+      <article className="px-4 mx-auto prose prose-zinc prose-quoteless prose-h4:text-white prose-h3:text-white prose-a:text-white text-zinc-300"> {/* py-12  */}
         {/* <Mdx code={post.body.code} /> */}
         <PostContent>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />

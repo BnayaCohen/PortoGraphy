@@ -34,8 +34,8 @@ export default function ImgContainer({ photoSrc }: Props) {
 
           />
           {hovered && (
-            <div className="absolute inset-0 opacity-60 flex items-center justify-center z-50">
-              <div className="text-zinc-800 bg-zinc-200 px-3 py-2 rounded-[3px]"><Eye size={30} /></div>
+            <div className="absolute cursor-pointer inset-0 flex items-center justify-center z-50">
+              <div className="text-zinc-800 opacity-60 bg-zinc-200 px-3 py-2 rounded-[3px] hover:opacity-90"><Eye size={30} /></div>
             </div>
           )}
         </div>

@@ -2,7 +2,7 @@
 title: 'Project Storyboard'
 description: Useful links of portfolios and notes
 date: '2024-03-19'
-image:
+image: /assets/images/my-logo.png
 photosFolder:
 ---
 

@@ -2,7 +2,7 @@
 title: 'Next.js blog Boilerplate'
 description: Everything you need to use this Nextjs template
 date: '2020-06-01'
-image: 
+image: /assets/images/nextjs-starter-banner.png
 photosFolder:
 ---
 
