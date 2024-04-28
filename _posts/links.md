@@ -3,7 +3,7 @@ title: 'Project Storyboard'
 description: Useful links of portfolios and notes
 date: '2024-03-19'
 image:
-photos:
+photosFolder:
 ---
 
 ![Logo](@@baseUrl@@/assets/images/my-logo.png)

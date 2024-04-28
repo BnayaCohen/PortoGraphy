@@ -3,7 +3,7 @@ title: 'Next.js blog Boilerplate'
 description: Everything you need to use this Nextjs template
 date: '2020-06-01'
 image: 
-photos:
+photosFolder:
 ---
 
 [![Nextjs starter banner](@@baseUrl@@/assets/images/nextjs-starter-banner.png)](https://creativedesignsguru.com/demo/Nextjs-Blog-Boilerplate/)

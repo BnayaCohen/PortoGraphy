@@ -11,7 +11,7 @@ export default function ProjectsPage() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const allProjects = getAllPosts(['title', 'description', 'image', 'photos', 'date', 'slug']);
+  const allProjects = getAllPosts(['title', 'description', 'image', 'photosFolder', 'date', 'slug']);
   const views = allProjects.reduce((acc, project) => {
     acc[project.slug] = getRandomInt(0, 1000); // Adjust the range of random views as needed
     return acc;
