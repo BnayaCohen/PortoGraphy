@@ -17,20 +17,13 @@ type Props = {
 };
 
 async function fetchImages(post: { [key: string]: string; }) {
+
   const images: string[] = [];
   if (post.photosFolder) {
-
-    const str: string = 'assets/demo-images/red-sea'
-    console.log(str);
-
-    const imageDirectory: string = path.resolve(process.cwd(), 'public', str);
-    console.log(imageDirectory);
-
+    const imageDirectory: string = path.resolve(process.cwd(), 'public', post.photosFolder);
     const imageFilenames: string[] = await fs.readdir(imageDirectory);
-    console.log(imageFilenames);
-
     const imagesPaths: string[] = imageFilenames.map((fileName: string) =>
-      (post.photosFolder + '/' + fileName).replace('/public', '').replace('public', '')
+      ('/' + post.photosFolder + '/' + fileName).replace('/public', '').replace('public', '')
     );
     console.log(imagesPaths);
 
