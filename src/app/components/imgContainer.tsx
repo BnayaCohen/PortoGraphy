@@ -11,7 +11,7 @@ export default function ImgContainer({ photoSrc }: Props) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full sm:w-[] md:w-[`calc(100vw / 3)`] mb-[3px] justify-self-center"
+    <div className="w-full sm:w-[] md:w-[`calc(100vw / 3)`] justify-self-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
       <div className="grid place-content-center">

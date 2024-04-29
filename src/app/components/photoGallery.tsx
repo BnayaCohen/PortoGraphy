@@ -57,13 +57,12 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       {!galleryReady && (
         <div className="text-center">Loading...</div>
       )}
-      <div className={'w-fit mx-auto columns-2 gap-[3px] sm:columns-2 md:columns-3 lg:columns-4 xl:w-[1280px]'} 
+      <div className={'w-fit mx-auto columns-2 gap-[3px] sm:columns-2 md:columns-3 lg:columns-4 xl:w-[1280px]'}
       >
         {images ? images.map((image, index) => (
-          <div key={index} onClick={() => handleImageClick(image)} style={{
-            breakInside: 'avoid',
-           
-          }}>
+          <div key={index} onClick={() => handleImageClick(image)}
+            className='mb-[3px]'
+            style={{ breakInside: 'avoid', }}>
             <ImgContainer photoSrc={image} />
           </div>
 
@@ -89,7 +88,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({ image, onClose }) => 
           src={image}
           alt="Full Screen"
           className="w-full h-full object-contain"
-          
+
         />
         {/* <button
           className="absolute top-8 left-10 bg-white rounded-full px-3 py-2 shadow-md"
