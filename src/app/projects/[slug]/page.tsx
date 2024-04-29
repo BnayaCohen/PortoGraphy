@@ -16,12 +16,6 @@ type Props = {
   };
 };
 
-async function fetchPost(slug: string) {
-  const post = getPostBySlug(slug, ['title', 'description', 'date', 'slug', 'image', 'photosFolder', 'content']);
-  post.content = await markdownToHtml(post.content || '');
-  return post;
-}
-
 async function fetchImages(post: { [key: string]: string; }) {
   const images: string[] = [];
   if (post.photosFolder) {
@@ -48,10 +42,11 @@ export default async function PostPage({ params }: Props) {
   const slug = params.slug;
   if (!getPostSlugs().includes(slug + '.md')) notFound();
 
+  const post = getPostBySlug(slug, ['title', 'description', 'date', 'slug', 'image', 'photosFolder', 'content']);
 
-  let post: { [key: string]: string; } = {}, images: string[] = [];
+  let images: string[] = [];
   try {
-    post = await fetchPost(slug)
+    post.content = await markdownToHtml(post.content || '');
     images = await fetchImages(post)
   } catch (err) {
     console.error(err)
