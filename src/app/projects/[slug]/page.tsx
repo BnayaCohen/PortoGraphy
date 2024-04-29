@@ -25,7 +25,6 @@ async function fetchImages(post: { [key: string]: string; }) {
     const imagesPaths: string[] = imageFilenames.map((fileName: string) =>
       ('/' + post.photosFolder + '/' + fileName).replace('/public', '').replace('public', '')
     );
-    console.log(imagesPaths);
 
     images.push(...shuffleImages(imagesPaths));
   }
