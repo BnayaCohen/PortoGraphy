@@ -19,11 +19,21 @@ type Props = {
 async function fetchImages(post: { [key: string]: string; }) {
   const images: string[] = [];
   if (post.photosFolder) {
-    const imageDirectory: string = path.join(process.cwd(), post.photosFolder);
+
+    const str: string = 'assets/demo-images/red-sea'
+    console.log(str);
+
+    const imageDirectory: string = path.resolve(process.cwd(), 'public', str);
+    console.log(imageDirectory);
+
     const imageFilenames: string[] = await fs.readdir(imageDirectory);
+    console.log(imageFilenames);
+
     const imagesPaths: string[] = imageFilenames.map((fileName: string) =>
       (post.photosFolder + '/' + fileName).replace('/public', '').replace('public', '')
     );
+    console.log(imagesPaths);
+
     images.push(...shuffleImages(imagesPaths));
   }
   return images;
