@@ -49,7 +49,7 @@ export default async function PostPage({ params }: Props) {
   if (!getPostSlugs().includes(slug + '.md')) notFound();
 
 
-  let post: { [key: string]: string; }, images: string[];
+  let post: { [key: string]: string; } = {}, images: string[] = [];
   try {
     post = await fetchPost(slug)
     images = await fetchImages(post)
@@ -57,7 +57,6 @@ export default async function PostPage({ params }: Props) {
     console.error(err)
   }
 
-  if (!post) return <div>Loading...</div>;
   return (
     <div className="min-h-screen">
       <Header post={post} />
