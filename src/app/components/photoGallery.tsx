@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
 import ImgContainer from "./imgContainer";
-// import { ArrowLeft } from "lucide-react";
 // import { addBlurredDataUrls } from "@/lib/getBase64";
 
 type PhotoGalleryProps = {
@@ -62,7 +61,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
         {images ? images.map((image, index) => (
           <div key={index} onClick={() => handleImageClick(image)}
             className='mb-[3px]'
-            style={{ breakBefore: 'always', }}>
+            style={{ breakBefore: 'always', breakInside: 'avoid' }}>
             <ImgContainer photoSrc={image} />
           </div>
 
@@ -88,14 +87,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({ image, onClose }) => 
           src={image}
           alt="Full Screen"
           className="w-full h-full object-contain"
-
         />
-        {/* <button
-          className="absolute top-8 left-10 bg-white rounded-full px-3 py-2 shadow-md"
-          onClick={onClose}
-        >
-						<ArrowLeft className="w-6 h-6 " />
-        </button> */}
       </div>
     </div>
   );
