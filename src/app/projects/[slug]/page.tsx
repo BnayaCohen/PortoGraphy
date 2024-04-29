@@ -16,6 +16,25 @@ type Props = {
   };
 };
 
+async function fetchPost(slug: string) {
+  const post = getPostBySlug(slug, ['title', 'description', 'date', 'slug', 'image', 'photosFolder', 'content']);
+  post.content = await markdownToHtml(post.content || '');
+  return post;
+}
+
+async function fetchImages(post: { [key: string]: string; }) {
+  const images: string[] = [];
+  if (post.photosFolder) {
+    const imageDirectory: string = path.join(process.cwd(), post.photosFolder);
+    const imageFilenames: string[] = await fs.readdir(imageDirectory);
+    const imagesPaths: string[] = imageFilenames.map((fileName: string) =>
+      (post.photosFolder + '/' + fileName).replace('/public', '').replace('public', '')
+    );
+    images.push(...shuffleImages(imagesPaths));
+  }
+  return images;
+}
+
 const shuffleImages = (array: string[]) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -29,19 +48,16 @@ export default async function PostPage({ params }: Props) {
   const slug = params.slug;
   if (!getPostSlugs().includes(slug + '.md')) notFound();
 
-  const post = getPostBySlug(slug, ['title', 'description', 'date', 'slug', 'image', 'photosFolder', 'content'])
-  post.content = await markdownToHtml(post.content || '');
 
-  let images: string[] = []
-
-  if (post.photosFolder) {
-    const imageDirectory: string = path.join(process.cwd(), post.photosFolder);
-    const imageFilenames: string[] = await fs.readdir(imageDirectory)
-    const imagesPathes: string[] = imageFilenames.map((fileName: string) => (post?.photosFolder + '/' + fileName).replace('/public', '').replace('public', ''))
-
-    images = shuffleImages(imagesPathes)
+  let post: { [key: string]: string; }, images: string[];
+  try {
+    post = await fetchPost(slug)
+    images = await fetchImages(post)
+  } catch (err) {
+    console.error(err)
   }
 
+  if (!post) return <div>Loading...</div>;
   return (
     <div className="min-h-screen">
       <Header post={post} />
