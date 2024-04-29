@@ -1,11 +1,10 @@
 ---
 title: Red Sea
-description: Photoshoot from Eilat by the Red Sea
+description: Photoshoot from Eilat
 date: '2022-09-02'
-image: /assets/demo-images/red-sea/IMG_5912.JPG
-photosFolder: assets/demo-images/red-sea
+image: /assets/projects-images/red-sea/IMG_5912.JPG
+photosFolder: assets/projects-images/red-sea
 ---
 
-#### The photos were taken by the old Canon 700D ####
-
-Special Model: YamBa
+#### Camera: Canon 700D, Lens: 18-135mm is STM
+Model: YamBa

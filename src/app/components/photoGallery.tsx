@@ -60,8 +60,8 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
       >
         {images ? images.map((image, index) => (
           <div key={index} onClick={() => handleImageClick(image)}
-            className='mb-[3px]'
-            style={{ breakBefore: 'always', breakInside: 'avoid' }}>
+            className='pb-[3px]'
+            style={{ breakAfter: 'always', breakInside: 'avoid' }}>
             <ImgContainer photoSrc={image} />
           </div>
 

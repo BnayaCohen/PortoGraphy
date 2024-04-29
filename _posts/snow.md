@@ -1,11 +1,10 @@
 ---
-title: Snow Photoshoot
-description: I took all this photos in sella ronda italy
-date: '2023-02-12'
-image: /assets/demo-images/snow/IMG_7974.JPG
-photosFolder: assets/demo-images/snow
+title: Snow Italy
+description: Great photoshoot at Maddona di campiglio
+date: '2024-03-07'
+image: /assets/projects-images/snow/0Z4A7161.JPG
+photosFolder: assets/projects-images/snow
 ---
 
-The photos were taken by the old canon 700d
-
-Special Model: SIvAaiv
+#### Camera: Canon r6m2, Lens: 24-105mm is USM
+Contrast is the key!

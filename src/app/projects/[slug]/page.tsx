@@ -9,6 +9,8 @@ import { markdownToHtml } from '../../util/Markdown';
 import { PostContent } from '../../components/postContent';
 import { Header } from "./header";
 import PhotoGallery from '../../components/photoGallery';
+import Video from 'next-video';
+  import getStarted from '/videos/get-started.mp4';
 
 type Props = {
   params: {
@@ -65,8 +67,10 @@ export default async function PostPage({ params }: Props) {
         </PostContent>
       </article>
 
+      {/* <Video src={getStarted} /> */}
+
       <PhotoGallery images={images} />
-      <div className="py-20"></div>
+      <div className="py-5 text-center text-zinc-400">Thanks</div>
 
     </div>
   );

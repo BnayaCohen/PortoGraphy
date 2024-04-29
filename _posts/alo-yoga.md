@@ -2,10 +2,9 @@
 title: alo yoga
 description: alo's acro and yoga event
 date: '2024-02-22'
-image: /assets/demo-images/alo-yoga/0Z4A5730.JPG
-photosFolder: assets/demo-images/alo-yoga
+image: /assets/projects-images/alo-yoga/0Z4A5730.JPG
+photosFolder: assets/projects-images/alo-yoga
 ---
 
-### every year alo celebrates with their embassadors ###
-
+### every year alo celebrates with their embassadors
 The whole event was shot under direct sunlight
