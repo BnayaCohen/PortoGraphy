@@ -1,0 +1,22 @@
+{
+  "status": "ready",
+  "originalFilePath": "videos\\joe-acro-story.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "JFpxm301QdG02w8rrnkZwkmYQfyPuaA007cWR00x00IMaKYw",
+      "assetId": "UNEGb4ANxUOlYl6PFLJWhEe5fuF701FT9BVjcptaNofQ",
+      "playbackId": "500od7wB53NHVw500qF00XGwecuGjTET4lVqO8BWSvqosw"
+    }
+  },
+  "createdAt": 1714494990746,
+  "updatedAt": 1714596961816,
+  "size": 152089542,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/500od7wB53NHVw500qF00XGwecuGjTET4lVqO8BWSvqosw.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/500od7wB53NHVw500qF00XGwecuGjTET4lVqO8BWSvqosw/thumbnail.webp"
+}

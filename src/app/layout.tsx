@@ -6,16 +6,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bnaya Cohen",
-  description: "Co-founder of this portfolio",
+  description: "My Photography Portfolio",
   openGraph: {
     title: "bnayacohen.com",
     description:
-      "Co-founder of this portfolio",
+      "My Photography Portfolio",
     url: "https://bnayacohen.com",
     siteName: "bnayacohen.com",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://bnayacohen.netlify.app/assets/images/my-logo.png",
         width: 1920,
         height: 1080,
       },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    shortcut: "/favicon.ico",
+    shortcut: "/icon.ico",
   },
 };
 
